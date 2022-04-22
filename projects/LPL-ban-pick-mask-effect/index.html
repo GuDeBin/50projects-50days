@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LPL Ban/Pick 选人阶段的遮罩特效</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="g-aurora left"><img src="img/jin-ke-si.jpg" /></div>
+    <div class="g-aurora right"><img src="img/fei-ji.jpg" /></div>
+    <div class="g-aurora right breathe"><img src="img/fei-ji.jpg" /></div>
+
+    <svg id="blob" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <filter id="smoke">
+        <feturbulence
+          type="fractalNoise"
+          baseFrequency=".035 .015"
+          numOctaves="20"
+          id="turbulence"
+          result="noise"
+        />
+        <fedisplacementmap
+          id="displacement"
+          in2="noise"
+          in="SourceGraphic"
+          scale="30"
+        />
+      </filter>
+    </svg>
+
+    <script src="srcipt.js"></script>
+  </body>
+</html>

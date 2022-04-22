@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>五子棋</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="topshow" id="msg">五子棋——人机对战</div>
+    <div id="chess" style="display: none">
+      <canvas id="canvas" width="480px" height="480px"></canvas>
+      <img src="images/white.png" id="newpos" />
+    </div>
+    <button id="startbtn" onclick="start()">开始五子棋</button>
+    <p>
+      1.五子棋目前是初级项目，只有人机对战模式，可以选择先手和后手。<br />
+      2.之后学会云开发，升级为线上人人对战，并引入观战模式。<br />
+    </p>
+    <script src="script.js"></script>
+  </body>
+</html>

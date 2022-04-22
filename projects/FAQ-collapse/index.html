@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ</title>
+    <!-- 引入bootStrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>常见问题</h1>
+    <div class="faq-container">
+      <div class="faq active">
+        <h3 class="faq-title">简述下你对HTML语义化的理解</h3>
+        <p class="faq-text">
+          用正确的标签做正确的事情。内容结构化、结构也更清晰，便于对浏览器、搜索引擎解析。提高搜索引擎的关键字权重，利于SEO。也方便阅读源代码。
+        </p>
+
+        <button class="faq-toggle">
+          <div class="down">
+            <span class="glyphicon glyphicon-menu-down"></span>
+          </div>
+          <div class="up">
+            <span class="glyphicon glyphicon-menu-up"></span>
+          </div>
+        </button>
+      </div>
+
+      <div class="faq">
+        <h3 class="faq-title">标签上title与alt属性的区别是什么</h3>
+        <p class="faq-text">
+          alt是给搜索引擎识别，在图像无法显示时的替代文本；title是关于元素的注释信息，主要是给用户解读。
+        </p>
+
+        <button class="faq-toggle">
+          <div class="down">
+            <span class="glyphicon glyphicon-menu-down"></span>
+          </div>
+          <div class="up">
+            <span class="glyphicon glyphicon-menu-up"></span>
+          </div>
+        </button>
+      </div>
+
+      <div class="faq">
+        <h3 class="faq-title">href与src的区别</h3>
+        <p class="faq-text">
+          href主要是指网路位置，目的不是引用资源而是建立联系，让当前标签链接到目标地址，而src是外部资源，指向的内容将会应用到文档中当前标签所在位置。
+        </p>
+
+        <button class="faq-toggle">
+          <div class="down">
+            <span class="glyphicon glyphicon-menu-down"></span>
+          </div>
+          <div class="up">
+            <span class="glyphicon glyphicon-menu-up"></span>
+          </div>
+        </button>
+      </div>
+
+      <div class="faq">
+        <h3 class="faq-title">var、let、const区别</h3>
+        <p class="faq-text">
+          var存在变量提升；let只能在块级作用域内访问；const用来定义常量，必须初始化，不能修改（对象特殊）
+        </p>
+
+        <button class="faq-toggle">
+          <div class="down">
+            <span class="glyphicon glyphicon-menu-down"></span>
+          </div>
+          <div class="up">
+            <span class="glyphicon glyphicon-menu-up"></span>
+          </div>
+        </button>
+      </div>
+
+      <div class="faq">
+        <h3 class="faq-title">JSON的了解</h3>
+        <p class="faq-text">
+          JSON（JavaScript Object
+          Notation）是一种轻量级的数据交换格式。它基于JavaScript的一个子集。数据格式化简单，易于读写，占用带宽小。
+        </p>
+
+        <button class="faq-toggle">
+          <div class="down">
+            <span class="glyphicon glyphicon-menu-down"></span>
+          </div>
+          <div class="up">
+            <span class="glyphicon glyphicon-menu-up"></span>
+          </div>
+        </button>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

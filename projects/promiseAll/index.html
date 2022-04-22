@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Check the console</h3>
+    <script>
+      Promise.limitAll = function (promises, limit) {
+        return new Promise((resolve) => {
+          let resolvedCount = 0;
+          let count = 0;
+          let res = [];
+          const len = promises.length;
+          function next(p, index) {
+            p().then((r) => {
+              res[index] = r;
+              resolvedCount++;
+              if (promises.length) {
+                const p = promises.shift();
+                next(p, count);
+                count++;
+              } else if (resolvedCount === len) {
+                // console.timeEnd('limit-all')
+                resolve(res);
+              }
+            });
+          }
+
+          while (count < limit && promises.length) {
+            const p = promises.shift();
+            next(p, count);
+            count++;
+          }
+        });
+      };
+
+      const promiseFactory = (res, timeout) => {
+        return () =>
+          new Promise((resolve) => {
+            console.count("get in pool");
+            setTimeout(() => {
+              resolve(res);
+            }, timeout);
+          });
+      };
+      console.time("start");
+      document.writeln("executing...");
+      Promise.limitAll(
+        [
+          promiseFactory(1, 1000),
+          promiseFactory(2, 2000),
+          promiseFactory(3, 2000),
+          promiseFactory(4, 1000),
+          promiseFactory(5, 1000),
+          promiseFactory(6, 500),
+          promiseFactory(7, 500),
+        ],
+        3
+      ).then((res) => {
+        const str = res.join(",");
+        document.writeln(str);
+        console.log(str);
+        console.timeEnd("start");
+      });
+    </script>
+  </body>
+</html>

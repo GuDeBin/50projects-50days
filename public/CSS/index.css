@@ -1,0 +1,230 @@
+/* 通用样式 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #333;
+  color: white;
+  line-height: 1.5;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: 45px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 40px;
+}
+/* 导航条 */
+.main-nav {
+  background-color: rebeccapurple;
+}
+.main-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 40px;
+}
+.main-nav .logo {
+  width: 250px;
+}
+.main-nav ul {
+  display: flex;
+  align-items: center;
+}
+.main-nav li {
+  margin: 0 20px;
+}
+.main-nav a:hover {
+  color: #ccc;
+}
+/* 头部样式 */
+.showcase {
+  height: 600px;
+  background: url(../images/showcase-bg.png) no-repeat center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.showcase h2 {
+  font-size: 32px;
+  color: rgb(156, 78, 233);
+  margin-bottom: 22px;
+  letter-spacing: 6px;
+}
+.showcase h1 {
+  font-size: 40px;
+  letter-spacing: 3px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+.showcase h4 {
+  color: #ccc;
+  margin: 30px 0 20px 0;
+}
+.showcase::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 2, 39, 0.9);
+  z-index: -2;
+}
+.showcase .btn {
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rebeccapurple;
+  padding: 10px;
+  width: 140px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+/* 测试 */
+.projects {
+  display: grid;
+  /* grid-template-columns: 100px 100px 100px; */
+  /* grid-template-rows: 100px 100px 100px; */
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+}
+.projects img {
+  width: 100%;
+  height: 100%;
+}
+.projects > div {
+  height: 100%;
+  position: relative;
+}
+
+.projects .day {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rebeccapurple;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-bottom-left-radius: 5px;
+}
+.projects > div:hover .content {
+  opacity: 0.98;
+}
+.projects .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rebeccapurple;
+  transition: 0.3s ease-in;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.projects h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+.projects .content a {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+  cursor: pointer;
+  color: white;
+  padding: 12px 30px;
+  transition: all 0.5s ease 0s;
+  background-color: #0181f5;
+  border-radius: 30px;
+}
+.projects .content a:hover {
+  transform: scale(0.9);
+  opacity: 0.9;
+  color: white;
+}
+.projects .iphoneBtn {
+  display: none;
+}
+/* 媒体查询-700px */
+@media (max-width: 960px) {
+  .showcase h1 {
+    font-size: 30px;
+  }
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .showcase h1 {
+    font-size: 20px;
+  }
+  .main-nav .logo {
+    width: 50px;
+  }
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+  .projects .content {
+    display: none;
+  }
+  .projects .iphoneBtn {
+    display: inline-block;
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.65;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+    cursor: pointer;
+    color: white;
+    padding: 12px 30px;
+    transition: all 0.5s ease 0s;
+    background-color: #0181f5;
+    border-radius: 30px;
+  }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>背景轮播图</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="slider-container">
+      <div
+        class="slider active"
+        style="background-image: url(./images/photo-1.jfif)"
+      ></div>
+      <div
+        class="slider"
+        style="background-image: url(./images/photo-2.jfif)"
+      ></div>
+      <div
+        class="slider"
+        style="background-image: url(./images/photo-3.jfif)"
+      ></div>
+      <div
+        class="slider"
+        style="background-image: url(./images/photo-4.jfif)"
+      ></div>
+      <div
+        class="slider"
+        style="background-image: url(./images/photo-5.jfif)"
+      ></div>
+      <button class="arrow left-arrow" id="left">
+        <span class="glyphicon glyphicon-menu-left"></span>
+      </button>
+      <button class="arrow right-arrow" id="right">
+        <span class="glyphicon glyphicon-menu-right"></span>
+      </button>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

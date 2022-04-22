@@ -1,0 +1,58 @@
+/* 通用样式 */
+* {
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+.container {
+  display: flex;
+  width: 90vw;
+}
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+
+.panel h4 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  opacity: 0;
+}
+.panel.active {
+  flex: 5;
+}
+.panel.active h4 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+  text-transform: capitalize;
+}
+/* 媒体查询 */
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+  .panel:nth-child(4),
+  .panel:nth-child(5) {
+    display: none;
+  }
+}
